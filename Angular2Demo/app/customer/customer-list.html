@@ -1,0 +1,43 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div>
+    <div class="panel-body">
+        <div class="row">
+             <div class="col-md-1">
+                <button class="btn btn-primary" (click)='onBack()'>Back</button>
+            </div>
+               <div class="col-md-8">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label>Search: </label>
+                        <input type="text" class="form-control" [(ngModel)]='name' />
+                    </div>
+                </form>
+            </div>   
+             <div class="col-md-2">
+                <label>Filter by: </label> {{name}}
+            </div>       
+        </div>     
+         <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Contact Name</th>
+                            <th>Country</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="#c of customers | customerFilter:name">
+                            <td>{{c.customerID}}</td>
+                            <td>{{c.contactName | uppercase}}</td>
+                            <td>{{c.country}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
