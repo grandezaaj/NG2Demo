@@ -27,10 +27,10 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
             CustomerService = (function () {
                 function CustomerService(_http) {
                     this._http = _http;
-                    this._productUrl = 'http://wdf2demo.leanconsulting.ph/api/Customers';
+                    this._url = 'http://wdf2demo.leanconsulting.ph/api/Customers';
                 }
                 CustomerService.prototype.getCustomers = function () {
-                    return this._http.get(this._productUrl)
+                    return this._http.get(this._url)
                         .map(function (response) { return response.json(); })
                         .catch(this.handleError);
                     //.do(data => console.log("All: " + JSON.stringify(data)))

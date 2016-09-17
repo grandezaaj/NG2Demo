@@ -1,8 +1,8 @@
 {
-    "name": "ng2 demo",
+    "name": "product-management",
     "version": "1.0.0",
-    "author": "Alfred Jett Grandeza",
-    "description": "NG2 DEMO for MSDN Sept 2016",
+    "author": "Deborah Kurata",
+    "description": "Package for the Acme Product Management sample application",
     "scripts": {
         "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
         "tsc": "tsc",

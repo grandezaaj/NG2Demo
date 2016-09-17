@@ -5,11 +5,11 @@ import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class CustomerService {
-    private _productUrl = 'http://wdf2demo.leanconsulting.ph/api/Customers';
+    private _url = 'http://wdf2demo.leanconsulting.ph/api/Customers';
     constructor(private _http: Http) {}
 
     getCustomers(): Observable<ICustomer[]> {
-        return this._http.get(this._productUrl)
+        return this._http.get(this._url)
             .map((response: Response) => <ICustomer[]>response.json())            
             .catch(this.handleError);
 
